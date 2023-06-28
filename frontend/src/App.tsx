@@ -40,6 +40,7 @@ function App() {
   const [leftImages, setLeftImages] = useState<{ name: string; link: string }[]>([]);
   const [middleImages, setMiddleImages] = useState<{ name: string; link: string }[]>([]);
   const [rightImages, setRightImages] = useState<{ name: string; link: string }[]>([]);
+  const [loading, setLoading] = useState(false);
 
   const baseURL = "http://localhost:8080"
 
@@ -49,6 +50,7 @@ function App() {
   }
 
   const addImage = async (title: string, link: string) => {
+    setLoading(true);
     let bodyFormData = new FormData();
     bodyFormData.append('title', title);
     bodyFormData.append('link', link);
@@ -64,8 +66,9 @@ function App() {
     } catch (e) {
       console.log(e);
     }
-    getData();
-    close()
+    setLoading(false);
+    setlabel(""); setlink("");
+    getData(); close()
   }
 
   const getData = () => {
@@ -102,22 +105,22 @@ function App() {
           placeholder={"https://images.unsplash.com/photo-1584395630827-860eee694d7b?ixlib=r..."}
           radius={"md"} label={"Photo URL"} />
 
-        <div className='ml-56 mt-4'>
+        <div className='ml-52 mt-4'>
           <Button variant="subtle" color='gray' onClick={close}>Cancel</Button>
-          <Button variant='outline' onClick={() => addImage(label, link)}>Submit</Button>
+          <Button variant='outline' onClick={() => addImage(label, link)} loading={loading}>Submit</Button>
         </div>
       </Modal>
 
       <Header openModal={open} />
 
       <div className='flex mx-16'>
-        <div className='mr-4 flex flex-col'>
+        <div className='mr-4 flex flex-col w-[30%]'>
           {leftImages.map((v) => <Tile link={v.link} name={v.name} key={v.link} Delete={Delete} />)}
         </div>
-        <div className='mx-4 flex flex-col'>
+        <div className='mx-4 flex flex-col w-[30%]'>
           {middleImages.map((v) => <Tile link={v.link} name={v.name} key={v.link} Delete={Delete} />)}
         </div>
-        <div className='ml-4 flex flex-col'>
+        <div className='ml-4 flex flex-col w-[30%]'>
           {rightImages.map((v) => <Tile link={v.link} name={v.name} key={v.link} Delete={Delete} />)}
         </div>
       </div>
