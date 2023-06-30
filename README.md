@@ -1,92 +1,73 @@
-<!-- Please update value in the {}  -->
+# My-Unsplash
 
-<h1 align="center">{Your project name}</h1>
-
-<div align="center">
-   Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
-</div>
-
-<div align="center">
-  <h3>
-    <a href="https://{your-demo-link.your-domain}">
-      Demo
-    </a>
-    <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
-      Solution
-    </a>
-    <span> | </span>
-    <a href="https://devchallenges.io/challenges/rYyhwJAxMfES5jNQ9YsP">
-      Challenge
-    </a>
-  </h3>
-</div>
-
-<!-- TABLE OF CONTENTS -->
-
-## Table of Contents
-
-- [Overview](#overview)
-  - [Built With](#built-with)
-- [Features](#features)
-- [How to use](#how-to-use)
-- [Contact](#contact)
-- [Acknowledgements](#acknowledgements)
-
-<!-- OVERVIEW -->
-
-## Overview
-
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
-
-Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
-
-- Where can I see your demo?
-- What was your experience?
-- What have you learned/improved?
-- Your wisdom? :)
-
-### Built With
-
-<!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
-
-- [React](https://reactjs.org/)
-- [Vue.js](https://vuejs.org/)
-- [Tailwind](https://tailwindcss.com/)
+My-Unsplash is a web application that allows users to upload, view, and delete photos. It provides a masonry layout to display the uploaded photos and includes features such as labels and delete buttons on hover.
 
 ## Features
 
-<!-- List the features of your application or follow the template. Don't share the figma file here :) -->
+- Display photos in a masonry layout.
+- Show labels and delete buttons when hovering over a photo.
+- Ability to delete photos from the application.
 
-This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/rYyhwJAxMfES5jNQ9YsP) was to build an application to complete the given user stories.
+## Tech Stack
 
-## How To Use
+- Frontend:
+  - React: JavaScript library for building user interfaces.
+  - Tailwind CSS: Utility-first CSS framework.
+- Backend:
+  - Go (Golang): Programming language for the backend.
+  - SQLite: Lightweight and embedded database.
+  - GORM: Go ORM library for database access.
+  - Fiber: Web framework for building APIs in Go.
 
-<!-- Example: -->
+## Getting Started
 
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+### Prerequisites
 
-```bash
-# Clone this repository
-$ git clone https://github.com/your-user-name/your-project-name
+- Node.js and npm: Make sure you have Node.js and npm installed on your machine.
+- Go: Install Go by following the instructions provided at [golang.org](https://golang.org/doc/install).
+- SQLite: Ensure that SQLite is installed on your system.
 
-# Install dependencies
-$ npm install
+### Installation
 
-# Run the app
-$ npm start
+1. Clone the repository:
+
+```shell
+   git clone https://github.com/veryshyjelly/My-Unsplash.git
+   cd my-unsplash
 ```
 
-## Acknowledgements
+2. Frontend setup:
+```shell
+   cd frontend
+   npm install
+```
+3. Backend setup:
+```shell
+   cd ../backend
+   go mod download
+```
 
-<!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For example: -->
+### Running the Application
+1. Start the backend server:
+```shell
+   cd backend
+   go run main.go
+```
 
-- [Steps to replicate a design with only HTML and CSS](https://devchallenges-blogs.web.app/how-to-replicate-design/)
-- [Node.js](https://nodejs.org/)
-- [Marked - a markdown parser](https://github.com/chjj/marked)
+2. Start the frontend development server:
+```shell
+   cd frontend
+   npm run dev
+```
 
-## Contact
+3. Open your web browser and visit `http://localhost:3000` to see the My-Unsplash application.
 
-- Website [your-website.com](https://{your-web-site-link})
-- GitHub [@your-username](https://{github.com/your-usermame})
-- Twitter [@your-twitter](https://{twitter.com/your-username})
+### Contributing
+Contributions are welcome! If you find any issues or have suggestions for improvements, please create a new issue or submit a pull request.
+
+### License
+[Apache License](github.com/veryshyjelly/My-Unsplash/LICENSE)
+
+### Acknowledgments
+- This project was inspired by the Unsplash website
+- Thanks to the developers and contributors of React, Tailwind CSS, Go, SQLite, GORM and Gofiber for their excellent tools and libraries.
